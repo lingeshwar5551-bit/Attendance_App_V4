@@ -1,0 +1,6 @@
+kivy
+kivymd
+opencv-python
+pyzbar
+pandas
+pillow

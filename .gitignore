@@ -1,0 +1,7 @@
+.buildozer/
+build/
+dist/
+bin/
+venv/
+__pycache__/
+*.pyc

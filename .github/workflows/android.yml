@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Android Build
 
 on:
   push:
@@ -11,16 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout source
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Build with Buildozer
-      uses: ArtemSBulgakov/buildozer-action@v1
-      with:
-        command: buildozer android debug
+      - name: Build APK
+        uses: Digreatbrian/buildozer-action@v2
+        with:
+          workdir: .
 
-    - name: Upload APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: Attendance-App-APK
-        path: bin/*.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: bin/*.apk
